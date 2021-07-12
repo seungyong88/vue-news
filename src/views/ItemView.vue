@@ -1,15 +1,14 @@
 <template>
-  <div>
+  <div v-if="fetchedItem">
     <section>
-      <div>사용자 프로필</div>
-      <div>
-        <router-link :to="`/user/${fetchedItem.user}`" >
-          {{fetchedItem.user}}
-        </router-link>
-        <div class="time">
-          {{fetchedItem.time_ago}}
-        </div>
-      </div>
+      <!-- 사용자 정보 -->
+      <UserProfile >
+        <!-- <div slot="username">{{fetchedItem.user}}</div> -->
+        <router-link slot="username" :to="`/user/${fetchedItem.user}`">{{fetchedItem.user}}</router-link>
+        <div slot="time">{{fetchedItem.time_ago}}</div>
+      </UserProfile>
+    </section>
+    <section>
       <h2>{{fetchedItem.title}}</h2>
     </section>
     <section>
@@ -20,13 +19,19 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import UserProfile from "../components/UserProfile.vue";
 
   export default {
-   
+  components: {
+    UserProfile
+  },
   computed: {
     ...mapGetters([
       'fetchedItem'
-    ])
+    ]),
+    // fetchedItem() {
+    //   return this.$store.state.item;
+    // }
   },
     created () {
       const id = this.$route.params.id;
@@ -35,7 +40,3 @@ import { mapGetters } from 'vuex';
   }
   
 </script>
-
-<style scoped>
-
-</style>

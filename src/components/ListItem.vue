@@ -1,6 +1,6 @@
 <template>
   <ul class="news-list">
-    <li class="post" v-for="item in listItems" :key="item.user">
+    <li class="post" v-for="(item, index) in listItems" :key="index">
       <!-- 포인트 혜택 -->
       <div class="points">
         {{ item.points || 0 }}
