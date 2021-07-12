@@ -2,8 +2,8 @@
   <div>
     <UserProfile v-if="userInfo">
       <div slot="username">{{userInfo.id}}</div>
-      <div slot="time">{{userInfo.created}}</div>
-      <div slot="karma">{{userInfo.karma}}</div>
+      <span slot="time">{{ 'joined ' + userInfo.created}}, </span>
+      <span slot="karma">{{userInfo.karma}}</span>
     </UserProfile>
   </div>
 </template>

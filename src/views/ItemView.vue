@@ -4,8 +4,10 @@
       <!-- 사용자 정보 -->
       <UserProfile >
         <!-- <div slot="username">{{fetchedItem.user}}</div> -->
-        <router-link slot="username" :to="`/user/${fetchedItem.user}`">{{fetchedItem.user}}</router-link>
-        <div slot="time">{{fetchedItem.time_ago}}</div>
+        <div slot="username">
+          <router-link :to="`/user/${fetchedItem.user}`">{{fetchedItem.user}}</router-link>
+        </div>
+        <span slot="time">{{ 'joined ' + fetchedItem.time_ago}}</span>
       </UserProfile>
     </section>
     <section>
