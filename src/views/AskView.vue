@@ -1,11 +1,12 @@
 <template>
-  <ul class="ask-list">
+  <div>
+    <ListItem />
+  </div>
+  <!-- <ul class="ask-list">
     <li class="post" v-for="item in fetchedAsks" :key="item.user">
-      <!-- 포인트 혜택 -->
       <div class="points">
         {{ item.points }}
       </div>
-      <!-- 기타 영역 -->
       <div>
         <p class="ask-title">
           <router-link :to="`item/${item.id}`">
@@ -15,29 +16,17 @@
         <small class="link-text">{{item.time_ago}} by {{item.domain}}</small>
       </div>
     </li>
-  </ul>
+  </ul> -->
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+  import ListItem from "../components/ListItem.vue";
 
-export default {
-  computed: {
-    ...mapGetters([
-      'fetchedAsks'
-    ])
-  },
-
-  // computed: {
-  //   ...mapGetters("RecognitionDataDetailStore"
-  //     , ["getModelInfo", "getFields", "getPageType"]),
-  // },ww
-
-  created () {
-    this.$store.dispatch('FETCH_ASKS');
-  },
-}
-
+  export default {
+    components: {
+      ListItem,
+    }
+  }
 </script>
 
 <style scoped>
