@@ -30,49 +30,13 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
 export default {
   computed: {
-    // 1.
-    // ...mapState({
-    //   users: state => state.users
-    // })
-
-    // ...mapGetters({
-    //   fetchedUsers: 'fetchedUsers'
-    // })
-
-    ...mapGetters([
-      'fetchedNews'
-    ]),
-
     listItems() {
-     if(this.$route.name === "news") {
-       return this.$store.state.news;
-        // return this.fetchedNews;
-      }else if(this.$route.name === "ask") {
-        // return this.fetchedAsks;
-       return this.$store.state.asks;
-      }else if(this.$route.name === "jobs") {
-        // return this.fetchedJobs;
-       return this.$store.state.jobs;
-      }else{ 
-        return null;
-      } 
+      return this.$store.state.list;
     }
 
-  },
-  created () {
-    console.log(this.$route.name);
-    if(this.$route.name === "news") {
-      this.$store.dispatch('FETCH_NEWS');
-    }else if(this.$route.name === "ask") {
-      this.$store.dispatch('FETCH_ASKS');
-    }else if(this.$route.name === "jobs") {
-      this.$store.dispatch('FETCH_JOBS');
-    }
-  },
+  }
 }
 </script>
 
