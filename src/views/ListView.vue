@@ -12,7 +12,3 @@ import ListItem from "../components/ListItem.vue";
     },
   }
 </script>
-
-<style scoped>
-
-</style>

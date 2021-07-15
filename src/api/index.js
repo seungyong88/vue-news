@@ -5,17 +5,17 @@ const config = {
   // https://api.hnpwa.com/v0/user/davideast.json
 }
 
-export function fetchNewsList() {
-  return axios.get(`${config.baseUrl}news/1.json`);
-}
+// export function fetchNewsList() {
+//   return axios.get(`${config.baseUrl}news/1.json`);
+// }
 
-export function fetchJobsList() {
-  return axios.get(`${config.baseUrl}jobs/1.json`);
-}
+// export function fetchJobsList() {
+//   return axios.get(`${config.baseUrl}jobs/1.json`);
+// }
 
-export function fetchAskList() {
-  return axios.get(`${config.baseUrl}ask/1.json`);
-}
+// export function fetchAskList() {
+//   return axios.get(`${config.baseUrl}ask/1.json`);
+// }
 
 export function fetchUserInfo(userName) {
   return axios.get(`${config.baseUrl}user/${userName}.json`);

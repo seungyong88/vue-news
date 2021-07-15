@@ -38,7 +38,10 @@ export default {
   },
   FETCH_LIST({ commit }, pageName) {
     fetchList(pageName)
-      .then(({ data }) => commit('SET_LIST', data))
+      .then((res) => {
+        commit('SET_LIST', res.data);
+        return res;
+      })
       .catch(err => console.log(err));
   }
 
