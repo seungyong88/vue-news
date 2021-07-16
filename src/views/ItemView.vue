@@ -21,7 +21,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import UserProfile from "../components/UserProfile.vue";
+import UserProfile from "../components/_UserProfile.vue";
 
   export default {
   components: {

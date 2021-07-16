@@ -1,15 +1,15 @@
 <template>
   <div>
-    <UserProfile v-if="userInfo">
+    <!-- <UserProfile v-if="userInfo">
       <div slot="username">{{userInfo.id}}</div>
       <span slot="time">{{ 'joined ' + userInfo.created}}, </span>
       <span slot="karma">{{userInfo.karma}}</span>
-    </UserProfile>
+    </UserProfile> -->
   </div>
 </template>
 
 <script>
-import UserProfile from "../components/UserProfile.vue";
+import UserProfile from "../components/_UserProfile.vue";
 
 export default {
   components: {
