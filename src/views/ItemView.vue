@@ -3,7 +3,6 @@
     <section>
       <!-- 사용자 정보 -->
       <UserProfile >
-        <!-- <div slot="username">{{fetchedItem.user}}</div> -->
         <div slot="username">
           <router-link :to="`/user/${fetchedItem.user}`">{{fetchedItem.user}}</router-link>
         </div>
